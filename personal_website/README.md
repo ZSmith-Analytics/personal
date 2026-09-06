@@ -66,23 +66,33 @@ GitHub Actions cannot turn Pages on for this account (`Resource not accessible b
 
 Public URL:
 
-`https://zsmith-analytics.github.io/general_analytics/`
+`https://zacksmith-analytics.com`
+
+GitHub Pages settings for this repo:
+
+`https://github.com/ZSmith-Analytics/personal/settings/pages`
 
 ### Turn on Pages (do this once)
 
 1. Open **this repo** (not your profile):  
-   [https://github.com/ZSmith-Analytics/general_analytics/settings/pages](https://github.com/ZSmith-Analytics/general_analytics/settings/pages)
+   [https://github.com/ZSmith-Analytics/personal/settings/pages](https://github.com/ZSmith-Analytics/personal/settings/pages)
 2. Under **Build and deployment**, set:
    - **Source:** Deploy from a branch
    - **Branch:** `main`
    - **Folder:** `/docs`
-3. Click **Save**.
-4. Wait a minute, then visit the URL above.
+3. Under **Custom domain**, enter `zacksmith-analytics.com` and **Save**.
+4. After DNS checks pass, enable **Enforce HTTPS**.
 
-If that settings page only shows **Verified domains**, you are on account settings. The address bar must contain `ZSmith-Analytics/general_analytics/settings/pages`.
+If that settings page only shows **Verified domains**, you are on account settings. The address bar must contain `ZSmith-Analytics/personal/settings/pages`.
 
-Edit the site in `personal_website/`, then copy the same files into `docs/` before you push (or edit both). `docs/` is what GitHub actually serves.
+Edit the site in `personal_website/`, then copy the same files into `docs/` before you push (or edit both). `docs/` is what GitHub actually serves. The file `docs/CNAME` must stay `zacksmith-analytics.com`.
 
-### Custom domain (optional)
+### Cloudflare DNS
 
-Buy a domain, then use **Custom domain** on that same repo Pages page. Do not use **Add a domain** under Verified domains unless GitHub asks you to verify ownership.
+Use **DNS only** (grey cloud), not proxied:
+
+- A `@` → `185.199.108.153`
+- A `@` → `185.199.109.153`
+- A `@` → `185.199.110.153`
+- A `@` → `185.199.111.153`
+- CNAME `www` → `zsmith-analytics.github.io`
