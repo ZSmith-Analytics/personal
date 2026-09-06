@@ -17,6 +17,7 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173). If you start the server fro
 | File | What it is |
 | --- | --- |
 | `index.html` | All page copy, navigation, motif SVG, contact links |
+| `resume.html` | Print-friendly resume for copy/paste |
 | `src/styles.css` | Colors, type, layout |
 | `src/main.js` | Tab routing plus Substack notes ticker and article list |
 
@@ -25,6 +26,7 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173). If you start the server fro
 The header tabs are hash links. Matching sections live in `index.html`:
 
 - `#about` — bio, portrait, published articles
+- `#resume` — resume (also `resume.html` for print/paste)
 - `#public-service` — Beacon council
 - `#data-science` — Uber work and GitHub
 - `#contact` — emails and socials
@@ -60,4 +62,24 @@ Headings use Cinzel; body uses Cormorant Garamond; labels use Josefin Sans (load
 
 ## Ship / host
 
-This is plain HTML, CSS, and JS. Point any static host (GitHub Pages, Netlify, S3) at the `personal_website` folder, or copy these three files as the site root.
+The repo deploys `personal_website/` to GitHub Pages on every push to `main` (see `.github/workflows/pages.yml`).
+
+Public URL after Pages is enabled:
+
+`https://zsmith-analytics.github.io/general_analytics/`
+
+### First-time setup
+
+1. Push `main` to GitHub.
+2. In the repo: **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Re-run the **Deploy personal website** workflow if it did not start on its own.
+
+### Custom domain (optional)
+
+1. Buy a domain (Namecheap, Google Domains, Cloudflare, etc.).
+2. In Pages settings, add the domain (e.g. `zacksmith.com`).
+3. At your DNS host, add a `CNAME` for `www` pointing at `zsmith-analytics.github.io`, and `A` records for the apex as GitHub lists in the Pages docs.
+4. Put the same hostname in `personal_website/CNAME` if you use an apex or www host.
+
+You can also drag the `personal_website` folder onto Netlify or Cloudflare Pages for a one-click public URL.

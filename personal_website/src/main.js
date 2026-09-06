@@ -165,7 +165,7 @@ function showPage(name) {
 
 function pageFromHash() {
   const hash = (location.hash || "#about").replace("#", "");
-  const known = ["about", "public-service", "data-science", "contact"];
+  const known = ["about", "resume", "public-service", "data-science", "contact"];
   return known.includes(hash) ? hash : "about";
 }
 
