@@ -63,7 +63,7 @@ Headings use Cinzel; body uses Cormorant Garamond; labels use Josefin Sans (load
 
 ## Ship / host
 
-GitHub Actions cannot turn Pages on for this account (`Resource not accessible by integration`). Publish from the `docs/` folder instead.
+Edit only this folder (`personal_website/`). GitHub Pages cannot publish a folder with that name from a branch (it only offers `/` or `/docs`), so a workflow deploys this folder for you.
 
 Public URL:
 
@@ -73,20 +73,16 @@ GitHub Pages settings for this repo:
 
 `https://github.com/ZSmith-Analytics/personal/settings/pages`
 
-### Turn on Pages (do this once)
+### Point Pages at the workflow (do this once)
 
 1. Open **this repo** (not your profile):  
    [https://github.com/ZSmith-Analytics/personal/settings/pages](https://github.com/ZSmith-Analytics/personal/settings/pages)
-2. Under **Build and deployment**, set:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main`
-   - **Folder:** `/docs`
-3. Under **Custom domain**, enter `zacksmith-analytics.com` and **Save**.
-4. After DNS checks pass, enable **Enforce HTTPS**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Keep **Custom domain** as `zacksmith-analytics.com`. After DNS checks pass, enable **Enforce HTTPS**.
 
 If that settings page only shows **Verified domains**, you are on account settings. The address bar must contain `ZSmith-Analytics/personal/settings/pages`.
 
-Edit the site in `personal_website/`, then copy the same files into `docs/` before you push (or edit both). `docs/` is what GitHub actually serves. The file `docs/CNAME` must stay `zacksmith-analytics.com`.
+The file `CNAME` in this folder must stay `zacksmith-analytics.com`.
 
 ### Cloudflare DNS
 
