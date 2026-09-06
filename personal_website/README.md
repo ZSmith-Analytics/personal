@@ -62,24 +62,27 @@ Headings use Cinzel; body uses Cormorant Garamond; labels use Josefin Sans (load
 
 ## Ship / host
 
-The repo deploys `personal_website/` to GitHub Pages on every push to `main` (see `.github/workflows/pages.yml`).
+GitHub Actions cannot turn Pages on for this account (`Resource not accessible by integration`). Publish from the `docs/` folder instead.
 
-Public URL after Pages is enabled:
+Public URL:
 
 `https://zsmith-analytics.github.io/general_analytics/`
 
-### First-time setup
+### Turn on Pages (do this once)
 
-1. Push `main` to GitHub.
-2. In the repo: **Settings → Pages**.
-3. Set **Source** to **GitHub Actions**.
-4. Re-run the **Deploy personal website** workflow if it did not start on its own.
+1. Open **this repo** (not your profile):  
+   [https://github.com/ZSmith-Analytics/general_analytics/settings/pages](https://github.com/ZSmith-Analytics/general_analytics/settings/pages)
+2. Under **Build and deployment**, set:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main`
+   - **Folder:** `/docs`
+3. Click **Save**.
+4. Wait a minute, then visit the URL above.
+
+If that settings page only shows **Verified domains**, you are on account settings. The address bar must contain `ZSmith-Analytics/general_analytics/settings/pages`.
+
+Edit the site in `personal_website/`, then copy the same files into `docs/` before you push (or edit both). `docs/` is what GitHub actually serves.
 
 ### Custom domain (optional)
 
-1. Buy a domain (Namecheap, Google Domains, Cloudflare, etc.).
-2. In Pages settings, add the domain (e.g. `zacksmith.com`).
-3. At your DNS host, add a `CNAME` for `www` pointing at `zsmith-analytics.github.io`, and `A` records for the apex as GitHub lists in the Pages docs.
-4. Put the same hostname in `personal_website/CNAME` if you use an apex or www host.
-
-You can also drag the `personal_website` folder onto Netlify or Cloudflare Pages for a one-click public URL.
+Buy a domain, then use **Custom domain** on that same repo Pages page. Do not use **Add a domain** under Verified domains unless GitHub asks you to verify ownership.
