@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zack Smith · Data Scientist &amp; Councilman</title>
+    <meta
+      name="description"
+      content="Zack Smith is a Senior Data Scientist at Uber and City Councilman for Ward 2 in Beacon, New York. Writing on tech, economics, and public office."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="page-frame" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="monogram" href="#about" aria-label="Zack Smith home">ZS</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about" data-nav="about">About</a>
+        <a href="#public-service" data-nav="public-service">Public Service</a>
+        <a href="#data-science" data-nav="data-science">Data Science</a>
+        <a href="#contact" data-nav="contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="ticker-wrap" aria-label="Latest Substack notes">
+      <span class="ticker-badge">Notes</span>
+      <div class="ticker-window">
+        <div class="ticker-track" id="ticker-track">
+          <span>Loading the wire…</span>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="page is-active" id="about" data-page="about">
+        <div class="hero">
+          <div class="hero-ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 200" fill="none">
+              <path d="M200 12 L208 40 L236 40 L214 58 L222 86 L200 68 L178 86 L186 58 L164 40 L192 40 Z" fill="#c4a35a" opacity="0.85" />
+              <path d="M40 188 C120 70 280 70 360 188" stroke="#c4a35a" stroke-width="1.2" />
+              <path d="M70 188 C140 95 260 95 330 188" stroke="#c4a35a" stroke-width="0.7" opacity="0.7" />
+              <path d="M100 188 C155 118 245 118 300 188" stroke="#e8d5a3" stroke-width="0.5" opacity="0.55" />
+              <line x1="20" y1="188" x2="380" y2="188" stroke="#c4a35a" stroke-width="1.4" />
+              <rect x="12" y="182" width="10" height="12" fill="#c4a35a" />
+              <rect x="378" y="182" width="10" height="12" fill="#c4a35a" />
+            </svg>
+          </div>
+          <p class="eyebrow">Forging a better future</p>
+          <h1>Zack Smith</h1>
+          <p class="hero-roles">Senior Data Scientist at Uber<br />City Councilman, Ward 2 · Beacon, NY</p>
+          <p class="hero-lede">
+            An economist named Smith, still at the forge — shaping incentives in the marketplace,
+            and the civic order of a Hudson Valley city.
+          </p>
+        </div>
+
+        <div class="panel inner">
+          <div class="section-head">
+            <span class="section-index">01</span>
+            <h2>About</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="about-grid">
+            <div class="portrait-frame">
+              <img
+                src="https://pbs.twimg.com/profile_images/2091632681578536960/deAurGRJ_400x400.jpg"
+                alt="Portrait of Zack Smith"
+                width="480"
+                height="480"
+              />
+              <span class="frame-caption">Zack Smith</span>
+            </div>
+            <div class="about-copy">
+              <p>
+                I am a Senior Data Scientist at Uber and the City Councilman for Ward 2 in Beacon,
+                New York. I care about evidence, incentives, and making institutions work — in a
+                marketplace of millions of Earners, and on a few square miles of the Hudson Valley.
+              </p>
+              <p>
+                I hold a master’s degree in economics from the University of Texas at Austin, with
+                graduate work in econometrics, financial economics, and statistics. Before Uber I
+                worked at Meta, building analysis and reporting for Global Operations.
+              </p>
+              <ul class="vital-stats">
+                <li><span>Now</span> Senior Data Scientist, Uber</li>
+                <li><span>Office</span> Councilman, Beacon Ward 2</li>
+                <li><span>Before</span> Meta</li>
+                <li><span>Training</span> M.A. Economics, UT Austin</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel inner articles-panel">
+          <div class="section-head">
+            <span class="section-index">02</span>
+            <h2>Published Articles</h2>
+            <div class="rule"></div>
+          </div>
+          <p class="dispatch-intro">
+            Longer essays will appear here. Notes from
+            <a href="https://substack.com/@zjsmith" target="_blank" rel="noopener noreferrer">@zjsmith</a>
+            run on the ticker above.
+          </p>
+          <div id="article-list" class="article-list">
+            <p class="feed-status on-dark">Loading articles…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="public-service" data-page="public-service" hidden>
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-index">03</span>
+            <h2>Public Service</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="civic-layout">
+            <div>
+              <p class="civic-kicker">City of Beacon · Ward 2</p>
+              <h3>Councilman Zack Smith</h3>
+              <p>
+                Sworn in on January 4, 2026. I ran because Beacon’s quality of life can be improved
+                with data, research, and attention to residents who feel overlooked as the city
+                redevelops.
+              </p>
+              <blockquote>
+                “As a data scientist, I am able to use data and research to make the best-informed
+                decisions for our city, which is especially important with big decisions coming for
+                zoning and redevelopment projects.”
+              </blockquote>
+              <p>
+                Priorities I have raised with Ward 2 residents include holding short-term-rental
+                landlords accountable, working with Main Street landlords on weekend parking, and
+                enforcing quality-of-life rules — parking, leashes, noise — so Beacon stays orderly
+                as it grows.
+              </p>
+              <p>
+                City Council meetings and workshops are streamed and archived on the City of Beacon
+                YouTube channel. Follow along there, then write me at
+                <a href="mailto:zsmith@beaconny.gov">zsmith@beaconny.gov</a>
+                if you have a Ward 2 or city issue.
+              </p>
+              <div class="hero-links start">
+                <a
+                  class="gold-btn"
+                  href="https://www.youtube.com/channel/UCvPpigGwZDeR7WYmw-SuDxg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >City of Beacon on YouTube</a
+                >
+                <a
+                  class="ghost-btn"
+                  href="https://beaconny.gov/index.php/meeting-videos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Meeting videos</a
+                >
+              </div>
+            </div>
+            <aside class="civic-card">
+              <p class="civic-card-label">The Record</p>
+              <ul>
+                <li>First-time candidate, elected 2025</li>
+                <li>Sworn in January 4, 2026</li>
+                <li>Ward 2 representative</li>
+                <li>Watch meetings on YouTube</li>
+              </ul>
+              <a
+                class="text-link"
+                href="https://highlandscurrent.org/2025/10/27/beacon-council-to-get-makeover/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Candidate Q&amp;A, The Highlands Current →</a
+              >
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="data-science" data-page="data-science" hidden>
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-index">04</span>
+            <h2>Data Science</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="ds-layout">
+            <div>
+              <p class="civic-kicker">Uber · New York</p>
+              <h3>Senior Data Scientist</h3>
+              <p>
+                I run experiments to improve the onboarding funnel for Earners — the people who
+                drive, deliver, and make the marketplace work. The job is measurement with
+                consequences: design the test, ship the analysis, and recommend the product change.
+              </p>
+              <p>
+                Day to day that looks like A/B tests, switchbacks, and synthetic controls; Python
+                notebooks end-to-end; Hive and Spark for scheduled datasets; Presto SQL for
+                analysis; and dashboards in Google Data Studio for engineering, product, and senior
+                leadership.
+              </p>
+              <p>
+                Code and one-off analytics live on GitHub.
+              </p>
+              <a
+                class="gold-btn"
+                href="https://github.com/ZSmith-Analytics"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub · ZSmith-Analytics</a
+              >
+            </div>
+            <aside class="civic-card">
+              <p class="civic-card-label">The Bench</p>
+              <ul>
+                <li>Experiment design &amp; causal inference</li>
+                <li>Python, Presto SQL, Hive, Spark</li>
+                <li>Product science for Earner onboarding</li>
+                <li>Stakeholder reporting &amp; decision memos</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="contact" data-page="contact" hidden>
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-index">05</span>
+            <h2>Contact</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="contact-grid">
+            <article class="contact-card">
+              <p class="ticket-kicker">Personal or business inquiries</p>
+              <h3>
+                <a href="mailto:zacksmith.analytics@outlook.com">zacksmith.analytics@outlook.com</a>
+              </h3>
+              <p>For personal or business inquiries.</p>
+            </article>
+            <article class="contact-card">
+              <p class="ticket-kicker">City of Beacon</p>
+              <h3>
+                <a href="mailto:zsmith@beaconny.gov">zsmith@beaconny.gov</a>
+              </h3>
+              <p>For City of Beacon issues.</p>
+            </article>
+            <article class="contact-card socials">
+              <p class="ticket-kicker">Socials</p>
+              <h3>To keep up with my latest</h3>
+              <ul class="social-list">
+                <li>
+                  <a href="https://x.com/zacksmith_data" target="_blank" rel="noopener noreferrer">X · @zacksmith_data</a>
+                </li>
+                <li>
+                  <a href="https://zjsmith.substack.com" target="_blank" rel="noopener noreferrer">Substack · @zjsmith</a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/zachary-smith-data/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://github.com/ZSmith-Analytics" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-ornament" aria-hidden="true"></div>
+      <p class="footer-name">Zack Smith</p>
+      <p class="footer-meta">Smithing capital · Beacon, New York · Opinions are my own</p>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
