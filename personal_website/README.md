@@ -19,7 +19,8 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173). If you start the server fro
 | `index.html` | All page copy, navigation, motif SVG, contact links |
 | `resume.html` | Print-friendly resume for copy/paste |
 | `src/styles.css` | Colors, type, layout |
-| `src/main.js` | Tab routing plus Substack notes ticker and article list |
+| `src/main.js` | Tab routing plus Substack notes and article list |
+| `img/zack-smith.jpg` | About-page portrait |
 
 ## Change copy and tabs
 
@@ -37,13 +38,13 @@ The rising-sun mark is the inline SVG in `.hero-ornament`. The tagline under it 
 
 ## Contact and socials
 
-Update emails, GitHub, LinkedIn, X, Substack, and the City of Beacon YouTube link in `index.html` (About ticker is separate; Contact is the source of truth for addresses).
+Update emails, GitHub, LinkedIn, X, Substack, and the City of Beacon YouTube link in `index.html` (Contact is the source of truth for addresses).
 
-## Notes ticker and articles
+## Notes and articles
 
 `src/main.js` pulls two public feeds:
 
-- **Notes** (the gold ticker under the nav) from `https://zjsmith.substack.com/api/v1/notes`
+- **Notes** (static cards at the bottom of About) from `https://zjsmith.substack.com/api/v1/notes`
 - **Published articles** (the folio on About) from `https://zjsmith.substack.com/feed`
 
 Until you publish an essay, the articles section stays empty on purpose. Notes appear as soon as they exist on Substack.

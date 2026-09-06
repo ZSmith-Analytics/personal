@@ -152,7 +152,6 @@ img {
 .civic-card-label,
 .when,
 .section-index,
-.ticker-badge,
 .footer-meta {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 0.22em;
@@ -178,7 +177,7 @@ img {
 .hero-roles {
   font-size: 1.35rem;
   color: var(--gold-bright);
-  margin: 0.4rem 0 1.2rem;
+  margin: 0.4rem 0 0;
 }
 
 .hero-lede {
@@ -259,27 +258,30 @@ img {
 .civic-layout,
 .ds-layout,
 .contact-grid,
-.article-list {
+.article-list,
+.notes-grid {
   display: grid;
   gap: 2rem;
 }
 
 .about-grid {
-  grid-template-columns: minmax(220px, 320px) 1fr;
+  grid-template-columns: auto 1fr;
   align-items: start;
 }
 
 .portrait-frame {
+  width: 176px;
   border: 1px solid var(--gold);
-  padding: 10px;
+  padding: 8px;
   background: var(--navy-2);
   box-shadow: var(--shadow);
 }
 
 .portrait-frame img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
   filter: contrast(1.05) saturate(0.85);
 }
 
@@ -424,6 +426,35 @@ img {
   padding-top: 1rem;
 }
 
+.notes-grid .empty-folio {
+  grid-column: 1 / -1;
+}
+
+.note-card {
+  border: 1px solid var(--line);
+  padding: 1.2rem 1.15rem;
+  background: rgba(20, 28, 40, 0.55);
+}
+
+.note-card p {
+  margin: 0.55rem 0 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.note-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.note-card a:hover {
+  color: var(--gold-bright);
+}
+
+.feed-meta.on-dark {
+  color: var(--gold);
+}
+
 .resume-folio {
   background: #f4ead8;
   color: #1b140f;
@@ -533,59 +564,6 @@ blockquote {
   font-size: 1.2rem;
   color: var(--muted);
   max-width: 46rem;
-}
-
-.ticker-wrap {
-  margin: 0;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  border-bottom: 1px solid var(--gold);
-  background: #0a0d12;
-  overflow: hidden;
-  position: sticky;
-  top: 73px;
-  z-index: 25;
-}
-
-.ticker-badge {
-  padding: 0.7rem 0.9rem;
-  background: var(--burgundy);
-  color: var(--gold-bright);
-  display: grid;
-  place-items: center;
-}
-
-.ticker-window {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
-
-.ticker-track {
-  display: flex;
-  gap: 2.4rem;
-  white-space: nowrap;
-  padding: 0.75rem 0;
-  width: max-content;
-  animation: marquee 42s linear infinite;
-  font-family: "Josefin Sans", sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  color: var(--gold-bright);
-}
-
-.ticker-track a {
-  color: var(--gold-bright);
-  text-decoration: none;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .ticket-row {

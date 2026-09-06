@@ -2,8 +2,8 @@ const SUBSTACK_FEED = "https://zjsmith.substack.com/feed";
 const SUBSTACK_NOTES = "https://zjsmith.substack.com/api/v1/notes?limit=20";
 const SUBSTACK_PROFILE = "https://substack.com/@zjsmith";
 
-const tickerTrack = document.getElementById("ticker-track");
 const articleList = document.getElementById("article-list");
+const notesList = document.getElementById("notes-list");
 
 function formatDate(value) {
   const date = new Date(value);
@@ -24,6 +24,14 @@ function stripHtml(html) {
 function truncate(text, length = 110) {
   if (!text) return "";
   return text.length > length ? `${text.slice(0, length).trim()}…` : text;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
 
 async function fetchJsonThroughProxy(url) {
@@ -106,7 +114,7 @@ function parseNotes(payload) {
       if (!body) return null;
       const id = comment.id || String(item.entity_key || "").replace(/^c-/, "");
       return {
-        title: truncate(body, 90),
+        body,
         url: id ? `https://substack.com/@zjsmith/note/c-${id}` : SUBSTACK_PROFILE,
         date: comment.date || item.context?.timestamp,
       };
@@ -129,23 +137,32 @@ function renderArticles(items) {
       (item) => `
         <article class="article-card">
           <div class="feed-meta">${formatDate(item.date)}</div>
-          <h3><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
-          <p>${truncate(item.summary, 180)}</p>
+          <h3><a href="${item.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
+          <p>${escapeHtml(truncate(item.summary, 180))}</p>
         </article>`
     )
     .join("");
 }
 
-function renderTicker(items) {
-  const fallback = [
-    { title: "Notes from @zjsmith · tech, economics, public office", url: SUBSTACK_PROFILE },
-  ];
-  const source = items.length ? items : fallback;
-  const doubled = [...source, ...source];
-  tickerTrack.innerHTML = doubled
+function renderNotes(items) {
+  if (!notesList) return;
+  if (!items.length) {
+    notesList.innerHTML = `
+      <div class="empty-folio">
+        <p class="empty-kicker">No notes yet</p>
+        <p>When new notes ship on Substack, they will show up here.</p>
+      </div>`;
+    return;
+  }
+
+  notesList.innerHTML = items
+    .slice(0, 8)
     .map(
-      (item) =>
-        `<a href="${item.url}" target="_blank" rel="noopener noreferrer">Note · ${item.title}</a><span aria-hidden="true">◆</span>`
+      (item) => `
+        <article class="note-card">
+          <div class="feed-meta on-dark">${formatDate(item.date)}</div>
+          <p><a href="${item.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(truncate(item.body, 240))}</a></p>
+        </article>`
     )
     .join("");
 }
@@ -177,7 +194,7 @@ async function loadFeeds() {
     fetchJsonThroughProxy(SUBSTACK_NOTES),
     fetchRss(SUBSTACK_FEED),
   ]);
-  renderTicker(parseNotes(notesPayload));
+  renderNotes(parseNotes(notesPayload));
   renderArticles(articles);
 }
 
